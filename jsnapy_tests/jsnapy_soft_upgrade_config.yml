@@ -3,5 +3,5 @@ hosts:
     username : abc
     passwd: pqr
 tests:
-  - /home/ansible/Automation/Ansible/jsnapy_module_tests/jsnapy_tests/show_interface_descriptions.yml 
-  - /home/ansible/Automation/Ansible/jsnapy_module_tests/jsnapy_tests/show_gbp_summary.yml
+  - jsnapy_tests/show_interface_descriptions.yml 
+  - jsnapy_tests/show_gbp_summary.yml
