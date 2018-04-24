@@ -2,16 +2,15 @@ show_bgp_summary:
 - command: show bgp summary
 - iterate:
     tests:
-    - err: ' ERROR: the number of BGP peers has changed from {{pre["peer-count"]}}
-        to {{post["peer-count"]}}.'
-      info: Checking the number of BGP peers ...
+    - err: 'The number of BGP peers has changed from {{pre["peer-count"]}} to {{post["peer-count"]}}.'
+      info: 'BGP Peer counts are same ({{pre["peer-count"]}) in PRE and POST.'
       no-diff: peer-count
     xpath: .
 - iterate:
     id: peer-address, peer-as
     tests:
-    - err: ' ERROR: the BGP peer {{id_0}} (ASN {{id_1}}) is not in Established state.'
-      info: Checking if the BGP peers are in Established state ...
+    - err: 'The BGP peer {{id_0}} (ASN {{id_1}}) is not in Established state.'
+      info: 'The BGP peer {{id_0}} (ASN {{id_1}}) is in Established state.'
       is-equal: peer-state, Established
     xpath: bgp-peer
 
