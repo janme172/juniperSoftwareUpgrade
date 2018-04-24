@@ -52,7 +52,7 @@ class CallbackModule(CallbackBase):
     if  module_args['action'] not in ('snapcheck', 'check', 'snap_post', 'snap_pre') or not ('test_files' in module_args or 'config_file' in module_args):
         return None
     # Added the <''> because module name not coming in results in case of juniper_junos_jsnapy module. Only module args are available.
-    if module_name in ('juniper_junos_jsnapy', 'junos_jsnapy', '') and ( module_args['action'] == 'snapcheck' or module_args['action'] == 'check' ):
+    if module_name in ('juniper_junos_jsnapy', 'junos_jsnapy', '') and (module_args['action'] not in ('snapcheck', 'check', 'snap_post', 'snap_pre')):
 
       ## Check if dict entry already exist for this host
       host = result._host.name
@@ -63,7 +63,7 @@ class CallbackModule(CallbackBase):
 
   def v2_playbook_on_stats(self, stats):
     
-    self._display.display("###################### CALLBACK INVOKED ##############################")
+    #self._display.display("###################### CALLBACK INVOKED ##############################")
     #self._display.display(str(self._results.items()))
 
     ## Go over all results for all hosts
