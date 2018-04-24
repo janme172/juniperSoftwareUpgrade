@@ -1,7 +1,7 @@
 ---
 -  name: Exploring the jnsapy modules of ansible provided by Juniper
-   hosts : all
-   roles :
+   hosts: all
+   roles:
      - Juniper.junos
    vars:
      #jsnapy_test_file: "jsnapy_tests/jsnapy_tests/jsnapy_soft_upgrade_config.yml"
