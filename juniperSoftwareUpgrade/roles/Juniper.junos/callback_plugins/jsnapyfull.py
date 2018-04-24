@@ -116,12 +116,8 @@ class CallbackModule(CallbackBase):
                   else:
                       data = test
                   #self._display.display("Hello\n")
-                  try:
-                    fail_message = test['message']
-                  except:
-                    fail_message = "Value of '{0}' not '{1}' at '{2}' with {3}".format(str(testlet['node_name']), str(testlet['testoperation']), str(testlet['xpath']), json.dumps(data))
                   self._display.display(
-                    "\tFail: {0}".format(fail_message), color=C.COLOR_ERROR
+                    "\tFail: {0}".format(test['message']), color=C.COLOR_ERROR
                   )
 #                  self._display.display("\t\tAnsible Output: Value of '{0}' not '{1}' at '{2}' with {3}".format(str(testlet['node_name']), str(testlet['testoperation']), str(testlet['xpath']), json.dumps(data)), color=C.COLOR_ERROR)
 
