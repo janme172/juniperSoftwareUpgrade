@@ -36,7 +36,7 @@ class CallbackModule(CallbackBase):
     ## Extract module name
     module_name = ''
     module_args = {}
-    #self._display.display(str(result._result))
+    self._display.display(str(result._result))
     self._display.display("1------------------------------------------------------------------------------------------------------------------------")    
     if 'invocation' in result._result:
       if 'module_name' in result._result['invocation']:
