@@ -49,7 +49,7 @@ class CallbackModule(CallbackBase):
     if 'action' not in module_args:
         return None
     # Extra check added so that it only runs for juniper_junos_jsnapy module only
-    if  module_args['action'] not in ('snapcheck', 'check') or not ('test_files' in module_args or 'config_file' in module_args):
+    if  module_args['action'] not in ('snapcheck', 'check', 'snap_post', 'snap_pre') or not ('test_files' in module_args or 'config_file' in module_args):
         return None
     # Added the <''> because module name not coming in results in case of juniper_junos_jsnapy module. Only module args are available.
     if module_name in ('juniper_junos_jsnapy', 'junos_jsnapy', '') and ( module_args['action'] == 'snapcheck' or module_args['action'] == 'check' ):
