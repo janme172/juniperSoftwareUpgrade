@@ -63,7 +63,7 @@ class CallbackModule(CallbackBase):
 
   def v2_playbook_on_stats(self, stats):
     
-    #self._display.display("###################### CALLBACK INVOKED ##############################")
+    self._display.display("###################### CALLBACK INVOKED ##############################")
     #self._display.display(str(self._results.items()))
 
     ## Go over all results for all hosts
